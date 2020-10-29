@@ -131,7 +131,6 @@ a:hover{
 	color: var(--text);
 }
 
-
 @media (prefers-color-scheme: dark) {
     :root{
         --primary: rgb(27,30,35);
