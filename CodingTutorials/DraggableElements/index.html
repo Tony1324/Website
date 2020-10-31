@@ -68,6 +68,34 @@
 }					</code>
 				</div>
 			</div>
-		</div>
+			<div style = "padding-left: 20px;padding-right: 20px;">
+				<p>the dragStart function gets called with the user begins to drag. 
+					we are just using this function to get the current location of the div,
+					and also add the other event listeners. <br> <br> and this is the drag function:</p>
+			</div>
+			<div id = "flexContainer">
+				<div class="flexItems code-container">
+					<code class = "code-block"><span class="purple">function</span> <span class="blue">drag</span>(e) {
+    <span class="comment">//changing the div's position every time the mouse moves</span>
+    draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">=</span> e.<span class="red">pageX</span> <span class="orange">-</span> xOffset <span class="orange">+</span> <span class="green">'px'</span>
+	draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">=</span> e.<span class="red">pageY</span> <span class="orange">-</span> yOffset <span class="orange">+</span> <span class="green">'px'</span>
+}</code>
+				</div>
+			</div>
+			<div style = "padding-left: 20px;padding-right: 20px;">
+				<p>this one is pretty simple, just updating the div's position.
+				there is one more function left.</p>
+			</div>
+			<div id = "flexContainer">
+				<div class="flexItems code-container">
+					<code class = "code-block"><span class="purple">function</span> <span class="blue">endDrag</span>() {
+	dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mousemove'</span>, drag);
+	dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mouseup'</span>, endDrag);
+}</code>
+				</div>
+			</div>
+			<div style = "padding-left: 20px;padding-right: 20px;">
+				<p>and that's it! <br> <br> the reason that I added the event listeners on the container and not is div itself is because the mousemove event listener only works if you are over the element, and if move your cursor too fast, the drag stops working.</p>
+			</div>
 	</body>
 </html>

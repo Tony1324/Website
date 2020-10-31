@@ -15,6 +15,7 @@ function drag(e) {
     draggedElement.style.top = e.pageY - yOffset + 'px';
 }
 
-function endDrag(e) {
+function endDrag() {
     dragContainer.removeEventListener('mousemove', drag);
+    dragContainer.removeEventListener('mousemove', endDrag);
 }
