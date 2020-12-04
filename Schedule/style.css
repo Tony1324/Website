@@ -1,9 +1,9 @@
 .flexItems img{
-	width: 100%;
-	height: 500px;
-	object-fit:cover;
+    width: 100%;
+    height: 500px;
+    object-fit:cover;
 }
 .flexItems{
-	height: 500px;
-	width: auto;
+    height: 500px;
+    width: auto;
 }
