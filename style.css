@@ -152,7 +152,7 @@ a:hover{
         --header: rgba(255,255,255,0.85);
         --header-secondary: rgba(220,220,220,0.4);
         --text: black;
-        --text-secondary: rgb(30,30,30);
+        --text-secondary: rgb(30, 30, 30);
         --shadow: rgba(0,0,0,0.03);
         --shadow-dark: rgba(0, 0, 0, 0.2);
         --border: rgb(240,240,240);

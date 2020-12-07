@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cycles | Tony Zhang</title>
+    <title>Today | Tony Zhang</title>
     <link rel = "stylesheet" href = "/style.css">
     <link rel="stylesheet" href="style.css">
     <link rel = "icon" href="/Icon.png">
+    <script src = "date.js"></script>
 </head>
 <body>
 <div id = "navbar">
@@ -24,24 +25,24 @@
 
 <div id = "mainContainer">
     <div style = "padding-left: 20px;padding-right: 20px; padding-top: 80px">
-        <h1  class="primary">Cycles</h1>
+        <h1  class="primary">Today</h1>
         <div class = "headerUnderline"></div>
-        <p>A simple timer made in swiftui.</p>
+        <p id="date"> -- </p>
     </div>
     <div id = "flexContainer">
         <div class="flexItems">
-            <img src="images/Cycles.png">
+            <p><span id = "year"></span> progress: <span id ="percent"></span>%</p>
+            <div class= "progress">
+                <div class="progress-bar" id = 'year-progress'>
+
+                </div>
+            </div>
         </div>
-    </div>
-    <div style = "padding-left: 20px;padding-right: 20px">
-        <p>        
-            You can change the title, color, and notification options. there is also an option to 
-            make the timer restart after it reaches zero. <br>
-        </p>
-    </div>
-    <div class="flexContainer">
         <div class="flexItems">
-            <img src="images/Cycles2.png">
+            <h1>March <span id="march-count"></span></h1>
+        </div>
+        <div class="flexItems">
+            <h1>Christmas <span id = "eve-count"></span></h1>
         </div>
     </div>
 </div>

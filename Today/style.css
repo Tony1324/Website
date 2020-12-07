@@ -1,0 +1,36 @@
+.flexItems{
+    height: auto;
+    width: 800px;
+    padding: 10px;
+}
+
+.flexItems h1{
+    margin:0;
+}
+
+.flexItems p{
+    margin: 0;
+}
+
+.flexItems {
+    text-align: left;
+}
+
+.progress{
+    height: 30px;
+    width: auto;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    margin: 10px 0px 5px 0px;
+    overflow: hidden;
+}
+
+.progress-bar{
+    box-sizing: border-box;
+    width: 0%;
+    min-width: 30px;
+    height: 100%;
+    border: 10px solid #ff0028;
+    border-radius: 15px;
+    transition: width 1s;
+}
