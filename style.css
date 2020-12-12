@@ -17,11 +17,10 @@ body {
     height: 35px;
     padding: 5px;
     background-color: var(--header);
-    border-bottom:1px solid var(--header-secondary);
-    box-shadow: 0px 0px 20px var(--shadow);
     -webkit-backdrop-filter: blur(15px) saturate(120%);
     backdrop-filter: blur(15px) saturate(120%);
     z-index: 1000;
+    transition: border-bottom 0.3s, box-shadow 0.3s;
 }
 
 #navbar a div {
