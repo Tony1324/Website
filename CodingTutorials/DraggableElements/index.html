@@ -42,8 +42,8 @@
     <div id = "flexContainer">
         <div class="flexItems code-container">
             <code class = "code-block">&lt;<span class="red">div</span> <span class="orange">id</span> = <span class="green">&quot;drag-container&quot;</span> <span class="orange">onmousedown</span>=<span class="green">"dragStart(this)"</span>&gt;
-                &lt;<span class="red" >div</span> <span class="orange">class</span> = <span class="green">&quot;draggable&quot;</span>&gt; click and drag&lt;/<span class="red">div</span>&gt;
-                &lt;/<span class="red">div</span>&gt;</code>
+    &lt;<span class="red" >div</span> <span class="orange">class</span> = <span class="green">&quot;draggable&quot;</span>&gt; click and drag&lt;/<span class="red">div</span>&gt;
+&lt;/<span class="red">div</span>&gt;</code>
         </div>
     </div>
     <div style = "padding-left: 20px;padding-right: 20px;">
@@ -52,21 +52,21 @@
     <div id = "flexContainer">
         <div class="flexItems code-container">
             <code class = "code-block"><span class="comment">//declare the drag container variable</span>
-                <span class="purple">var</span> dragContainer;
-                <span class="purple">function</span> <span class="blue">dragStart</span>(element) {
-                <span class="comment">//get the container and the element</span>
-                dragContainer <span class="orange">=</span> document.<span class="blue">getElementById</span>(<span class="green">'drag-container'</span>);
-                draggedElement <span class="orange">=</span> element;
-                <span class="comment">//set the position if it wasn't defined before</span>
-                <span class="purple">if</span> (draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">==</span> <span class="green">''</span>) draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">=</span> <span class="green">'20px'</span>;
-                <span class="purple">if</span> (draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">==</span> <span class="green">''</span>) draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">=</span> <span class="green">'20px'</span>;
-                <span class="comment">//get the position of the div</span>
-                xOffset <span class="orange">=</span> event.<span class="red">pageX</span> <span class="orange">-</span> <span class="blue">parseInt</span>(draggedElement.<span class="red">style</span>.<span class="red">left</span>);
-                yOffset <span class="orange">=</span> event.<span class="red">pageY</span> <span class="orange">-</span> <span class="blue">parseInt</span>(draggedElement.<span class="red">style</span>.<span class="red">top</span>);
-                <span class="comment">//addEventListeners for when the mouse moves and when the mouse is up</span>
-                dragContainer.<span class="blue">addEventListener</span>(<span class="green">'mousemove'</span>, drag);
-                dragContainer.<span class="blue">addEventListener</span>(<span class="green">'mouseup'</span>, endDrag);
-                }					</code>
+<span class="purple">var</span> dragContainer;
+<span class="purple">function</span> <span class="blue">dragStart</span>(element) {
+    <span class="comment">//get the container and the element</span>
+    dragContainer <span class="orange">=</span> document.<span class="blue">getElementById</span>(<span class="green">'drag-container'</span>);
+    draggedElement <span class="orange">=</span> element;
+    <span class="comment">//set the position if it wasn't defined before</span>
+    <span class="purple">if</span> (draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">==</span> <span class="green">''</span>) draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">=</span> <span class="green">'20px'</span>;
+    <span class="purple">if</span> (draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">==</span> <span class="green">''</span>) draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">=</span> <span class="green">'20px'</span>;
+    <span class="comment">//get the position of the div</span>
+    xOffset <span class="orange">=</span> event.<span class="red">pageX</span> <span class="orange">-</span> <span class="blue">parseInt</span>(draggedElement.<span class="red">style</span>.<span class="red">left</span>);
+    yOffset <span class="orange">=</span> event.<span class="red">pageY</span> <span class="orange">-</span> <span class="blue">parseInt</span>(draggedElement.<span class="red">style</span>.<span class="red">top</span>);
+    <span class="comment">//addEventListeners for when the mouse moves and when the mouse is up</span>
+    dragContainer.<span class="blue">addEventListener</span>(<span class="green">'mousemove'</span>, drag);
+    dragContainer.<span class="blue">addEventListener</span>(<span class="green">'mouseup'</span>, endDrag);
+}					</code>
         </div>
     </div>
     <div style = "padding-left: 20px;padding-right: 20px;">
@@ -77,10 +77,10 @@
     <div id = "flexContainer">
         <div class="flexItems code-container">
             <code class = "code-block"><span class="purple">function</span> <span class="blue">drag</span>(e) {
-                <span class="comment">//changing the div's position every time the mouse moves</span>
-                draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">=</span> e.<span class="red">pageX</span> <span class="orange">-</span> xOffset <span class="orange">+</span> <span class="green">'px'</span>
-                draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">=</span> e.<span class="red">pageY</span> <span class="orange">-</span> yOffset <span class="orange">+</span> <span class="green">'px'</span>
-                }</code>
+    <span class="comment">//changing the div's position every time the mouse moves</span>
+    draggedElement.<span class="red">style</span>.<span class="red">left</span> <span class="orange">=</span> e.<span class="red">pageX</span> <span class="orange">-</span> xOffset <span class="orange">+</span> <span class="green">'px'</span>
+    draggedElement.<span class="red">style</span>.<span class="red">top</span> <span class="orange">=</span> e.<span class="red">pageY</span> <span class="orange">-</span> yOffset <span class="orange">+</span> <span class="green">'px'</span>
+}</code>
         </div>
     </div>
     <div style = "padding-left: 20px;padding-right: 20px;">
@@ -90,9 +90,9 @@
     <div id = "flexContainer">
         <div class="flexItems code-container">
             <code class = "code-block"><span class="purple">function</span> <span class="blue">endDrag</span>() {
-                dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mousemove'</span>, drag);
-                dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mouseup'</span>, endDrag);
-                }</code>
+    dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mousemove'</span>, drag);
+    dragContainer.<span class="blue">removeEventListener</span>(<span class="green">'mouseup'</span>, endDrag);
+}</code>
         </div>
     </div>
     <div style = "padding-left: 20px;padding-right: 20px;">
