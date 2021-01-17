@@ -87,14 +87,17 @@ body {
     text-align: left;
     white-space: nowrap;
     padding: 10px;
+    overflow: hidden;
 }
 .description h4{
     margin:auto;
     color:var(--text);
+    text-overflow: ellipsis;
 }
 .description p{
     margin:auto;
     font-size: 12px;
+    text-overflow: ellipsis;
 }
 .flexItems img{
     width: 100%;
