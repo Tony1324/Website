@@ -1,4 +1,4 @@
-window.addEventListener("touchend", (e)=>{
+window.addEventListener("click", (e)=>{
     document.querySelectorAll(".open").forEach((e)=>{
         e.classList.remove("open")
     })
