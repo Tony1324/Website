@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    --accent-color:#FF6363;
+    --background-transparent:rgba(0,0,0,0.5);
+    --section-transition-duration: 0.2s;
+}
+
+
+body,html{
+    margin:0;
+    width:100%;
+    height:100%;
+    font-family: "roboto", sans-serif;
+}
+
+h1{
+    font-family:"IBM Plex Sans", sans-serif;
+    font-weight: 800;
+    font-size: calc(50px + 6vmin / 2);
+    letter-spacing: 0.05em;
+    margin:0;
+    transition: font-size var(--section-transition-duration);
+}
+
+p{
+    font-weight: 300;
+    font-size: calc(8px + 2vmin / 2);
+    margin:0;
+}
+
+a {
+    color:inherit;
+    display:inline-block;
+    text-decoration: none;
+    transition: background-color 0.1s;
+    padding:3px;
+    margin:-3px;
+    background-color: rgba(0,0,0,0);
+    border-radius: 3px;
+}
+
+a:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+a:active{
+    background-color: rgba(0,0,0,0.2);
+}
+
+header,section{
+    position:relative;
+    width:100%;
+    height:60vh;
+    min-height:300px;
+    transition:height var(--section-transition-duration);
+    color:var(--section-foreground);
+    background-color:var(--section-background);
+}
+
+
+.section-label{
+    position: absolute;
+    top:50%;
+    left:40vmin;
+    transform: translate(0, -50%);
+    border-radius: 8px;
+    transition-property: top, left, background-color,backdrop-filter,-webkit-backdrop-filter,box-shadow,padding;
+    transition-duration: var(--section-transition-duration);
+    transition-timing-function: ease-in-out;
+}
+
+@media only screen and (max-width: 1400px){
+    .section-label{
+        left:20vmin
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .section-label{
+        left:10vmin
+    }
+}
+
+
+section:hover .section-label{
+    top:0;    
+    left:20px;
+    background-color:var(--section-background);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    padding:10px 20px;
+    border-radius:8px;
+    display:flex;
+    align-items: center;
+}
+
+section:hover h1{
+    font-size: calc(15px + 1vmin / 2);
+}
+
+section:hover p{
+    display:none
+}
+
+header{
+    background-color: #FF6363;
+
+    --section-background: #FF6363;
+    --section-foreground: white;
+}
+
+#section-youtube{
+    --section-background: white;
+    --section-foreground: #464646;
+}
+
+#section-webdev{
+    background-color: #6BA6FF;
+
+    --section-background: #6BA6FF;
+    --section-foreground: white;
+}
