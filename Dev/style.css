@@ -65,6 +65,7 @@ header,section{
     left:40vmin;
     transform: translate(0, -50%);
     border-radius: 8px;
+    max-width:calc(100% - 80vmin);
     transition-property: top, left, background-color,backdrop-filter,-webkit-backdrop-filter,box-shadow,padding;
     transition-duration: var(--section-transition-duration);
     transition-timing-function: ease-in-out;
@@ -72,20 +73,23 @@ header,section{
 
 @media only screen and (max-width: 1400px){
     .section-label{
-        left:20vmin
+        left:20vmin;
+        max-width:calc(100% - 40vmin);
     }
 }
 
 @media only screen and (max-width: 800px){
     .section-label{
-        left:10vmin
+        left:10vmin;
+        max-width:calc(100% - 20vmin);
     }
 }
 
 
-section:hover .section-label{
+section:hover .section-label, .open .section-label{
     top:0;    
     left:20px;
+    width:auto;
     background-color:var(--section-background);
     backdrop-filter: blur(50px);
     -webkit-backdrop-filter: blur(50px);
@@ -96,11 +100,11 @@ section:hover .section-label{
     align-items: center;
 }
 
-section:hover h1{
+section:hover .section-label h1, .open .section-label h1{
     font-size: calc(15px + 1vmin / 2);
 }
 
-section:hover p{
+section:hover .section-label p, .open .section-label p{
     display:none
 }
 
