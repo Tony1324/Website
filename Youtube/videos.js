@@ -1,6 +1,7 @@
 var uploadsContainer = document.getElementById('flexContainer');
 var nextPage;
 
+
 function uploads(nextPageToken){
     fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAdgaQTvzBpamUf81RIJLDY3kI7Y7NHMX8&channelId=UCabBd1g8nBWWCx2YT4yeXOA&part=snippet,id&order=date&maxResults=50&pageToken${nextPageToken}`)
         .then(res => res.json())
@@ -45,4 +46,4 @@ function uploads(nextPageToken){
         })
 }
 
-uploads(nextPage);
+uploads(nextPage)

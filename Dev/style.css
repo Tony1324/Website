@@ -2,9 +2,20 @@
 
 :root{
     --accent-color:#FF6363;
-    --background-transparent:rgba(0,0,0,0.5);
-    --section-transition-duration: 0.3s;
+    --background-color:white;
+    --foreground-color-1:#464656;
+    --foreground-color-2:#666676;
+    --background-transparent:rgba(0,0,0,0.6);
+    --section-transition-duration: 0.2s;
     --card-transition-duration: 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+        --background-color:#36363A;
+        --foreground-color-1:whitesmoke;
+        --foreground-color-2:#DDDDDD;
+    }
 }
 
 *{
@@ -13,24 +24,29 @@
 
 body,html{
     margin:0;
-    width:100%;
-    height:100%;
     font-family: "roboto", sans-serif;
+    color: var(--foreground-color-1);
+    background-color:var(--background-color);
 }
 
 h1{
     font-family:"IBM Plex Sans", sans-serif;
     font-weight: 800;
-    font-size: calc(50px + 6vmin / 2);
+    font-size: calc(40px + (60 - 40) * (100vw - 400px) / (1200 - 400));
+    line-height: 1.2em;
     letter-spacing: 0.05em;
-    margin:0;
-    transition: font-size var(--section-transition-duration);
+    margin:10px 0px;
 }
 
 p{
     font-weight: 300;
-    font-size: calc(8px + 2vmin / 2);
+    font-size: calc(12px + (14 - 12) * (100vw - 400px) / (1200 - 400));
+    line-height:1.5em;
     margin:0;
+    color:var(--foreground-color-2);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
 }
 
 a {
@@ -38,10 +54,10 @@ a {
     display:inline-block;
     text-decoration: none;
     transition: background-color 0.1s;
-    padding:3px;
-    margin:-3px;
+    padding:2px 4px;
+    margin:-2px -4px;
     background-color: rgba(0,0,0,0);
-    border-radius: 3px;
+    border-radius: 5px;
 }
 
 a:hover{
@@ -53,122 +69,81 @@ a:active{
 }
 
 header,section{
-    position:relative;
     width:100%;
-    /* height:60vh; */
-    min-height:300px;
-    transition:height var(--section-transition-duration);
-    color:var(--section-foreground);
-    background-color:var(--section-background);
+    padding:20px calc(50vw - 450px);
 }
 
-
-.section-label{
-    position: absolute;
-    top:50%;
-    left:40vmin;
-    transform: translate(0, -50%);
-    border-radius: 8px;
-    max-width:calc(100% - 80vmin);
-    transition-property: top, left, background-color,backdrop-filter,-webkit-backdrop-filter,box-shadow,padding;
-    transition-duration: var(--section-transition-duration);
-    transition-timing-function: ease-in-out;
-    z-index: 1;
+section h1{
+    display: inline-block;
+    font-size: calc(16px + (22 - 16) * (100vw - 400px) / (1200 - 400));
+    font-weight:400;
 }
 
-@media only screen and (max-width: 1400px){
-    .section-label{
-        left:20vmin;
-        max-width:calc(100% - 40vmin);
+section h1::after{
+    content:"";
+    display:block;
+    width:0;
+    height:2px;
+    border-radius: 1px;
+    background-color:var(--accent-color);
+    transition:width 0.2s, height 0.2s;
+}
+
+section h1:hover::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:2px;
+    background-color:var(--accent-color);
+}
+
+@media only screen and (max-width: 940px){
+    header,section{
+        padding:20px 20px;
     }
-}
-
-@media only screen and (max-width: 800px){
-    .section-label{
-        left:10vmin;
-        max-width:calc(100% - 20vmin);
+    .section-expanded{
+        margin: 020px -20px !important;
     }
 }
 
 .section-content{
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity var(--section-transition-duration);
     width:100%;
     height:100%;
-    overflow: scroll;
-    
 }
 
-section:hover .section-content, .open .section-content{
-    opacity: 1;
-    pointer-events: auto;
-}
-
-
-section:hover .section-label, .open .section-label{
-    top:0;    
-    left:20px;
-    width:auto;
-    background-color:var(--section-background);
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
-    padding:10px 20px;
-    border-radius:8px;
-    display:flex;
-    align-items: center;
-}
-
-section:hover .section-label h1, .open .section-label h1{
-    font-size: calc(15px + 1vmin / 2);
-}
-
-section:hover .section-label p, .open .section-label p{
-    display:none
+.section-expanded{
+    margin: 0px calc((-50vw + 450px) / 1);
 }
 
 header{
     background-color: #FF6363;
-    height: 55vh;
-    --section-background: #FF6363;
-    --section-foreground: white;
+    display:flex;
+    align-items: center;
+    height: 60vh;
+    min-height:400px;
+    color: white;
 }
 
-#section-youtube{
-    --section-background: white;
-    --section-foreground: #464646;
+header p{
+    color: white; 
 }
-
-#section-webdev{
-    background-color: #6BA6FF;
-
-    --section-background: #6BA6FF;
-    --section-foreground: white;
-}
-
-
-
-
 
 
 .card-container{
     display: flex;
-    scroll-snap-type: x proximity;
     overflow: auto;
     align-items: center;
-    padding:20px;
+    padding:30px;
 }
 
 .card-container::after{
     content: "";
-    padding: 10px;
+    padding: 20px;
 }
 
 .card{
-    scroll-snap-align: center;
     margin:20px;
-    width:500px;
+    width:480px;
     flex-shrink: 0;
     max-width: calc(100% - 40px);
     background-color: var(--section-background);
@@ -178,6 +153,7 @@ header{
     transition-property: box-shadow, transform;
     transition-duration: var(--card-transition-duration);
     transition-timing-function: ease;
+    transform: rotate(-1deg);
     overflow: hidden;
 }
 
@@ -194,7 +170,8 @@ header{
 .card-content{
     width:100%;
     height:auto;
-    border-radius: 5px 5px 0px 0px;
+    display:flex;
+    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -214,17 +191,43 @@ header{
 }
 
 .card-description{
-    color: var(--section-foreground);
-    padding:10px;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: var(--background-transparent);
+    opacity:0;
+    padding:20px;
+    transition-property:opacity, backdrop-filter, -webkit-backdrop-filter;
+    transition-timing-function: ease;
+    transition-duration: var(--card-transition-duration);
+    overflow:hidden;
 }
 
 .card-description h3{
-    margin:4px; 
+    color:white;
+    margin:0;
+    margin-bottom: 10px;
+    font-size: calc(15px + 3vmin / 2);
+    font-family: "IBM Plex Sans";
 }
 
-.card-description p{
-    margin:4px; 
-    font-size: 15px;
+.card-description p {
+    color:white;
+}
+
+
+.card:hover .card-description{
+    -webkit-backdrop-filter: blur(50px) saturate(250%);
+    backdrop-filter: blur(50px);
+    opacity: 1;
+}
+
+.card:active .card-description{
+    -webkit-backdrop-filter: blur(25px) saturate(140%);
+    backdrop-filter: blur(50px);
+    opacity: 1;
 }
 
 
