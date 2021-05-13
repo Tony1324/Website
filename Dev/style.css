@@ -3,7 +3,7 @@
 :root{
     --accent-color:#FF6363;
     --background-transparent:rgba(0,0,0,0.5);
-    --section-transition-duration: 0.2s;
+    --section-transition-duration: 0.3s;
     --card-transition-duration: 0.2s;
 }
 
@@ -70,7 +70,6 @@ header,section{
     transform: translate(0, -50%);
     border-radius: 8px;
     max-width:calc(100% - 80vmin);
-    pointer-events: none;
     transition-property: top, left, background-color,backdrop-filter,-webkit-backdrop-filter,box-shadow,padding;
     transition-duration: var(--section-transition-duration);
     transition-timing-function: ease-in-out;
@@ -131,7 +130,7 @@ section:hover .section-label p, .open .section-label p{
 
 header{
     background-color: #FF6363;
-    height: 40vh;
+    height: 55vh;
     --section-background: #FF6363;
     --section-foreground: white;
 }
@@ -154,17 +153,24 @@ header{
 
 
 .card-container{
-    height:100%;
-    padding:20px;
     display: flex;
+    scroll-snap-type: x proximity;
+    overflow: auto;
     align-items: center;
+    padding:20px;
+}
+
+.card-container::after{
+    content: "";
+    padding: 10px;
 }
 
 .card{
+    scroll-snap-align: center;
     margin:20px;
-    width:400px;
-    max-width: calc(100% - 40px);
+    width:500px;
     flex-shrink: 0;
+    max-width: calc(100% - 40px);
     background-color: var(--section-background);
     border-radius: 5px;
     overflow: hidden;
@@ -182,6 +188,7 @@ header{
 
 .card:active{
     transform: rotate(2deg) scale(0.95);
+    box-shadow: 0px 12px 30px rgba(0,0,0,0.08);
 }
 
 .card-content{
