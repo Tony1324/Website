@@ -32,7 +32,7 @@ body,html{
 h1{
     font-family:"IBM Plex Sans", sans-serif;
     font-weight: 800;
-    font-size: calc(40px + (60 - 40) * (100vw - 400px) / (1200 - 400));
+    font-size: calc(45px + (80 - 45) * (100vw - 400px) / (1200 - 400));
     line-height: 1.2em;
     letter-spacing: 0.05em;
     margin:10px 0px;
@@ -40,7 +40,7 @@ h1{
 
 p{
     font-weight: 300;
-    font-size: calc(12px + (14 - 12) * (100vw - 400px) / (1200 - 400));
+    font-size: 14px;
     line-height:1.5em;
     margin:0;
     color:var(--foreground-color-2);
@@ -58,6 +58,7 @@ a {
     margin:-2px -4px;
     background-color: rgba(0,0,0,0);
     border-radius: 5px;
+    word-break: break-all;
 }
 
 a:hover{
@@ -75,7 +76,7 @@ header,section{
 
 section h1{
     display: inline-block;
-    font-size: calc(16px + (22 - 16) * (100vw - 400px) / (1200 - 400));
+    font-size: calc(18px + (22 - 18) * (100vw - 400px) / (1200 - 400));
     font-weight:400;
 }
 
@@ -102,7 +103,7 @@ section h1:hover::after{
         padding:20px 20px;
     }
     .section-expanded{
-        margin: 020px -20px !important;
+        margin: 0px -20px !important;
     }
 }
 
@@ -125,7 +126,7 @@ header{
 }
 
 header p{
-    color: white; 
+    color: white;
 }
 
 
@@ -133,12 +134,12 @@ header p{
     display: flex;
     overflow: auto;
     align-items: center;
-    padding:30px;
+    padding:20px;
 }
 
 .card-container::after{
     content: "";
-    padding: 20px;
+    padding: 10px;
 }
 
 .card{
@@ -153,18 +154,18 @@ header p{
     transition-property: box-shadow, transform;
     transition-duration: var(--card-transition-duration);
     transition-timing-function: ease;
-    transform: rotate(-1deg);
+    transform: scale(1);
     overflow: hidden;
 }
 
 .card:hover{
     transform: rotate(-2deg) scale(1.05);
-    box-shadow: 0px 12px 30px rgba(0,0,0,0.2);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.2);
 }
 
 .card:active{
-    transform: rotate(2deg) scale(0.95);
-    box-shadow: 0px 12px 30px rgba(0,0,0,0.08);
+    transform: scale(0.95);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.08);
 }
 
 .card-content{
@@ -173,20 +174,17 @@ header p{
     display:flex;
     border-radius: 5px;
     overflow: hidden;
-}
-
-.card-content img{
-    width:100%;
     transition-property: transform;
     transition-duration: var(--card-transition-duration);
     transition-timing-function: ease;
 }
 
-.card:hover img{
+
+.card:hover .card-content{
     transform: scale(1.05);
 }
 
-.card:active img{
+.card:active .card-content{
     transform: scale(1);
 }
 
@@ -199,9 +197,11 @@ header p{
     background-color: var(--background-transparent);
     opacity:0;
     padding:20px;
-    transition-property:opacity, backdrop-filter, -webkit-backdrop-filter;
+    transition-property:opacity, transform, backdrop-filter, -webkit-backdrop-filter;
     transition-timing-function: ease;
     transition-duration: var(--card-transition-duration);
+    transform: scale(1);
+    pointer-events: none;
     overflow:hidden;
 }
 
@@ -222,12 +222,27 @@ header p{
     -webkit-backdrop-filter: blur(50px) saturate(250%);
     backdrop-filter: blur(50px);
     opacity: 1;
+    pointer-events: auto;
 }
 
 .card:active .card-description{
     -webkit-backdrop-filter: blur(25px) saturate(140%);
     backdrop-filter: blur(50px);
+    pointer-events: auto;
     opacity: 1;
+
 }
 
+#section-youtube .card-content img{
+    height:268px;
+    width:100%;
+    object-fit: cover;
+}
 
+@media only screen and (max-width: 560px){
+    #section-youtube .card-content img{
+        height:calc((100vw - 82px) / 1.778 );
+        width:100%;
+        object-fit: cover;
+    }
+}
