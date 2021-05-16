@@ -14,14 +14,13 @@ function addVideos(data){
             let text = document.createElement("p");
             text.innerHTML = video.snippet.description;
 
-            let description = document.createElement("div");
+            let description = document.createElement("a");
             description.appendChild(title);
             description.appendChild(text);
             description.className = "card-description";
             let videoId = video.id.videoId
-            description.onclick = ()=>{
-                open(`https://www.youtube.com/watch?v=${videoId}`)
-            }
+            description.href = `https://www.youtube.com/watch?v=${videoId}`
+            description.target = `_blank`
 
             let image = document.createElement("img");
             image.src = video.snippet.thumbnails.high.url;

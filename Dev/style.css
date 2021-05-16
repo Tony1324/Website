@@ -2,6 +2,7 @@
 
 :root{
     --accent-color:#FF6363;
+    --accent-color:color(display-p3 1 0.4 0.4);
     --background-color:white;
     --foreground-color-1:#464656;
     --foreground-color-2:#666676;
@@ -117,7 +118,7 @@ section h1:hover::after{
 }
 
 header{
-    background-color: #FF6363;
+    background-color: var(--accent-color);
     display:flex;
     align-items: center;
     height: 60vh;
@@ -132,8 +133,9 @@ header p{
 
 .card-container{
     display: flex;
-    overflow: auto;
-    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    align-items: flex-start;
     padding:20px;
 }
 
@@ -146,6 +148,7 @@ header p{
     margin:20px;
     width:480px;
     flex-shrink: 0;
+    flex-grow: 0;
     max-width: calc(100% - 40px);
     background-color: var(--section-background);
     border-radius: 5px;
@@ -179,6 +182,9 @@ header p{
     transition-timing-function: ease;
 }
 
+.card-content img{
+    width:100%;
+}
 
 .card:hover .card-content{
     transform: scale(1.05);
@@ -189,14 +195,16 @@ header p{
 }
 
 .card-description{
+    display:block;
     position: absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
-    background-color: var(--background-transparent);
+    background-color: var(--background-transparent) !important;
     opacity:0;
     padding:20px;
+    margin:0;
     transition-property:opacity, transform, backdrop-filter, -webkit-backdrop-filter;
     transition-timing-function: ease;
     transition-duration: var(--card-transition-duration);
@@ -216,7 +224,6 @@ header p{
 .card-description p {
     color:white;
 }
-
 
 .card:hover .card-description{
     -webkit-backdrop-filter: blur(50px) saturate(250%);
@@ -245,4 +252,9 @@ header p{
         width:100%;
         object-fit: cover;
     }
+}
+
+
+#section-webdev .card{
+    width:520px;
 }
