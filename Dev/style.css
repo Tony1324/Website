@@ -2,13 +2,18 @@
 
 :root{
     --accent-color:#FF6363;
-    --accent-color:color(display-p3 1 0.4 0.4);
     --background-color:white;
     --foreground-color-1:#464656;
     --foreground-color-2:#666676;
     --background-transparent:rgba(0,0,0,0.6);
     --section-transition-duration: 0.2s;
     --card-transition-duration: 0.2s;
+}
+
+@supports (color: color(display-p3 1 0.4 0.4)) {
+    :root {
+        --accent-color: color(display-p3 1 0.4 0.4);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
