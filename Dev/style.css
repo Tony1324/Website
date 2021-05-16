@@ -47,7 +47,7 @@ p{
     color:var(--foreground-color-2);
     overflow-wrap: break-word;
     word-wrap: break-word;
-
+    word-break: normal;
 }
 
 a {
