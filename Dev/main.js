@@ -7,17 +7,19 @@ window.addEventListener("resize", ()=>{
 
 window.addEventListener("load", ()=>{
     document.querySelectorAll("section > *, header > *").forEach((e)=>{
-        console.log(window.innerHeight - e.getBoundingClientRect().top)
         if(window.innerHeight - e.getBoundingClientRect().top > 140){
             e.classList.add("scroll-animation-appeared")    
         }
     })
 })
 
-window.addEventListener("scroll", (e)=>{
+window.addEventListener("load", appearOnScroll)
+window.addEventListener("scroll", appearOnScroll)
+
+function appearOnScroll(){
     document.querySelectorAll("section > *:not(.scroll-animation-appeared), header > *:not(.scroll-animation-appeared)").forEach((e)=>{
         if(window.innerHeight - e.getBoundingClientRect().top > 140){
             e.classList.add("scroll-animation-appeared")
         }
     })
-})
+}
