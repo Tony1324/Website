@@ -123,6 +123,17 @@ section h1:hover::after{
     margin: 0px calc((-50vw + 450px) / 1);
 }
 
+section > *, header > *{
+    opacity:0;
+    transform: translateY(50px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.scroll-animation-appeared{
+    opacity:1;
+    transform: none;
+}
+
 header{
     background-color: var(--accent-color);
     display:flex;
@@ -135,6 +146,8 @@ header{
 header p{
     color: white;
 }
+
+
 
 
 .card-container{
@@ -208,7 +221,7 @@ header p{
     width:100%;
     height:100%;
     background-color: var(--background-transparent) !important;
-    opacity:1;
+    opacity:0;
     padding:20px;
     margin:0;
     transition-property:opacity, backdrop-filter, -webkit-backdrop-filter;
@@ -246,6 +259,7 @@ header p{
 
 }
 
+
 #section-youtube .card-content img{
     height:268px;
     width:100%;
@@ -264,3 +278,8 @@ header p{
 #section-webdev .card{
     width:520px;
 }
+
+#section-blender .card{
+    width:580px;
+}
+
