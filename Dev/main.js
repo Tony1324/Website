@@ -23,3 +23,18 @@ function appearOnScroll(){
         }
     })
 }
+
+let scrollInterval
+function scrollButton(e,isLeft){
+    scrollInterval = setInterval(()=>{
+        e.parentNode.scrollLeft += isLeft ? -10 : 10 
+    },2)
+}
+
+window.addEventListener("mouseup", ()=>{
+    clearInterval(scrollInterval)
+})
+
+window.addEventListener("touchend", ()=>{
+    clearInterval(scrollInterval)
+})

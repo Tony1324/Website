@@ -154,7 +154,7 @@ header p{
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    align-items: flex-start;
+    align-items: center;
     padding:20px;
 }
 
@@ -163,12 +163,47 @@ header p{
     padding: 10px;
 }
 
+.card-scroll-button{
+    position: absolute;
+    z-index: 2;
+    height: 5em;
+    border:none;
+    border-radius:5px;
+    opacity:0;
+    padding:10px;
+    margin:0 -10px;
+    color: var(--foreground-color-1);
+    background-color: var(--background-color);
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition-property: opacity, transform;
+    transition-duration: var(--card-transition-duration);
+    transition-timing-function: ease;
+    transition-delay: 0.5s, 0s;
+}
+
+.card-scroll-button:last-of-type{
+    right:20px;
+}
+
+.card-container:hover .card-scroll-button{
+    opacity:1;
+}
+
+.card-scroll-button:hover{
+    transform: scale(1.1)
+}
+
+.card-scroll-button:active{
+    transform: scale(0.9)
+}
+
 .card{
     margin:20px;
-    width:480px;
+    height:340px;
     flex-shrink: 0;
     flex-grow: 0;
-    max-width: calc(100% - 40px);
     background-color: var(--section-background);
     border-radius: 5px;
     overflow: hidden;
@@ -191,8 +226,8 @@ header p{
 }
 
 .card-content{
-    width:100%;
-    height:auto;
+    width:auto;
+    height:100%;
     display:flex;
     border-radius: 5px;
     overflow: hidden;
@@ -202,7 +237,7 @@ header p{
 }
 
 .card-content img{
-    width:100%;
+    height:100%;
 }
 
 .card:hover .card-content{
@@ -261,25 +296,8 @@ header p{
 
 
 #section-youtube .card-content img{
-    height:268px;
-    width:100%;
+    width:610px;
+    height:100%;
     object-fit: cover;
-}
-
-@media only screen and (max-width: 560px){
-    #section-youtube .card-content img{
-        height:calc((100vw - 82px) / 1.778 );
-        width:100%;
-        object-fit: cover;
-    }
-}
-
-
-#section-webdev .card{
-    width:520px;
-}
-
-#section-blender .card{
-    width:580px;
 }
 
