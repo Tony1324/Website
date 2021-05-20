@@ -1,25 +1,27 @@
 <!DOCTYPE html><html lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.js"></script>
-    <link rel="stylesheet" type="text/css" href="/style.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta charset="utf-8">
-    <link rel="icon" href="https://user-images.githubusercontent.com/61944932/78169597-a9374000-741f-11ea-80e1-b65566d1f9f5.png">
+    <script charset="utf-8" src="/main.js"></script>
     <title>Wave | Tony Zhang</title>
-    <script src="/header.js" defer></script>
+    <noscript>
+        <style type="text/css" media="screen">
+            section > *, header > *{
+                opacity:1;
+                transform: translateY(0px);
+                transition: transform 0s, opacity 0s;
+            }
+        </style>
+    </noscript>
 </head>
-<body>
-<div id = "navbar">
-    <a href="https://twitter.com/Tony24752364" target="about:blank">
-        <div>
-            <img src="/images/twitter.png" width = "30" style = "margin:3px">
+<body header-small>
+    <header onload="appearOnScroll()">
+        <div class="section-label">
+            <h1><a href="/">wave</a></h1>
+            <p class="main-description"><a href="https://twitter.com/tony24752364" target="_blank">twitter</a> | <a href="mailto:hello@tonyzhang.net">email</a></p>
         </div>
-    </a>
-    <a href="/">
-        <div style = "width: 100px;float: left">
-            <h1 style = "text-align: center;margin:5px;" class="primary">Home</h1>
-        </div>
-    </a>
-</div>
+    </header>
 <script src="sketch.js"></script>
 </body></html>

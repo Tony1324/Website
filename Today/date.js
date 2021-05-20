@@ -1,4 +1,14 @@
 window.addEventListener('load', () => {
+
+    const nth = function(d) {
+        switch (d % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+        }
+    }
+
     var date = document.getElementById('date');
     var d = new Date();
     date.innerHTML = d.toDateString();
@@ -19,7 +29,7 @@ window.addEventListener('load', () => {
         d = new Date();
         let march = new Date(2020, 2, 1);
         let diffDays = Math.ceil(Math.abs((march - d) / 86400000));
-        document.getElementById('march-count').innerHTML = diffDays;
+        document.getElementById('march-count').innerHTML = diffDays + nth(diffDays);
     }
 
     function eveCount() {
@@ -40,3 +50,4 @@ window.addEventListener('load', () => {
     setInterval(eveCount, 3600000);
     setInterval(marchCount, 3600000);
 });
+

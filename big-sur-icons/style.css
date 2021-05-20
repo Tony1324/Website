@@ -1,0 +1,8 @@
+header h1{
+    font-size: calc(40px + (60 - 40) * (100vw - 400px) / (1200 - 400));
+}
+
+.card{
+    height:200px;
+    box-shadow: none;
+}
