@@ -6,33 +6,31 @@
     <title>404 Not Found | Tony Zhang</title>
     <link rel = "stylesheet" href = "style.css">
     <link rel = "icon" href="/icon.png">
-    <script src="header.js" defer></script>
+    <script src="main.js"></script>
 </head>
 <body>
-<div id = "navbar">
-    <a href="https://twitter.com/Tony24752364" target="about:blank">
-        <div>
-            <img src="images/twitter.png" width = "30" style = "margin:3px">
+    <header onload="appearOnScroll()">
+        <div class="section-label">
+            <h1><a href="/">404 Not Found</a></h1>
+            <p class="main-description"><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a> | <a href="mailto:hello@tonyzhang.net">Email</a></p>
         </div>
-    </a>
-    <a href="/">
-        <div style = "width: 100px;float: left">
-            <h1 style = "text-align: center;margin:5px;" class="primary">Home</h1>
+        <div class="section-content">
+            <p>Maybe you entered the url wrong or I messed something up. Just click <a href="/">the title</a> to go back. <br> <br>
+            </p>
         </div>
-    </a>
-</div>
+    </header> 
+    <section>
+        <div class="section-label">
+            <h1>What's A 404 Error?</h1>
+        </div>
+        <div class="section-content">
+            <p>
+            Since you're here, it would be a great place to learn about HTTP Response Codes, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="about:blank"> Wikipedia has something about it.</a> <br> <br>
 
-<div id = "mainContainer">
-    <div style = "padding-left: 20px;padding-right: 20px; padding-top: 80px">
-        <h1  class="primary">404 Not Found</h1>
-        <div class = "headerUnderline"></div>
-        <p>Maybe you entered the url wrong or I messed something up. Just click <a href="/">home</a> to go back. <br> <br>
-        But since you're here, it would be a great place to learn about HTTP Response Codes, <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="about:blank"> Wikipedia has something about it.</a> <br> <br>
-
-        They are a code that the server sends back when you, the client, requests something. The 400s are client errors, which means <em>you</em> did something wrong. 404 is probably the most common,
-        and it basically means that whatever you are trying to find doesn't exist. other examples are 504 Gateway Timeout, 200 Ok, and 418 I'm a teapot. (Coffee is much better than tea)
-        </p>
-    </div>
-</div>
+            They are a code that the server sends back when you, the client, requests something. The 400s are client errors, which means <em>you</em> did something wrong. 404 is probably the most common,
+            and it basically means that whatever you are trying to find doesn't exist. other examples are 504 Gateway Timeout, 200 Ok, and 418 I'm a teapot. (Coffee is much better than tea)
+            </p>
+        </div>
+    </section>
 </body>
 </html>
