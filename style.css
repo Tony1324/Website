@@ -215,6 +215,7 @@ header .section-content{
 
 [header-small] header .section-label p{
     display:inline-block;
+    font-size:1em;
 }
 
 [header-small] section:first-of-type{
