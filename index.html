@@ -20,235 +20,216 @@
 </head>
 <body>
     <header onload="appearOnScroll()">
-        <div class="section-label">
-            <h1><a href="/">Tony Zhang</a></h1>
-            <p class="main-description"><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a> | <a href="mailto:hello@tonyzhang.net">Email</a></p>
-        </div>
-        <div class="section-content">
-            <p>
-                I am a 13 years old in 8th grade. I enjoy programming and design in my free time.
-            </p>
-        </div>
+        <h1><a href="/">Tony Zhang</a></h1>
+        <p class="main-description"><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a> | <a href="mailto:hello@tonyzhang.net">Email</a> | <a href="https://github.com/Tony1324" target="_blank">GitHub</a> | <a href="/blog">Blog</a></p>
+        <p>
+        I am a 13 years old in 8th grade. I enjoy programming and design in my free time.
+        </p>
     </header> 
     <section id="section-youtube">
-        <div class="section-label">
-            <h1>YouTube Videos</h1>
-            <p><a href="https://www.youtube.com/channel/UCabBd1g8nBWWCx2YT4yeXOA" target="_blank">https://www.youtube.com/channel/UCabBd1g8nBWWCx2YT4yeXOA</a></p>
-        </div>
-        <div class="section-content">
-            <div class="section-expanded">
-               <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-               </div>
+        <h1>YouTube Videos</h1>
+        <p><a href="https://www.youtube.com/channel/UCabBd1g8nBWWCx2YT4yeXOA" target="_blank">https://www.youtube.com/channel/UCabBd1g8nBWWCx2YT4yeXOA</a></p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
             </div>
         </div>
     </section>
     <section id="section-webdev">
-        <div class="section-label">
-            <h1>Web Dev</h1>
-            <p>Here are the websites that I made and designed.</p>
+        <h1>Web Dev</h1>
+        <p>Here are the websites that I made and designed.</p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/web-dev/cartographer.png" alt="image of the website, cartographer">
+                    </div>
+                    <a class="card-description" href="https://cartographer-vocabulary.web.app" target="_blank">
+                        <h3>Cartographer</h3>
+                        <p>A vocabulary and flashcard website app that I made. </p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/web-dev/today.png" alt="image of webpage 'today'">
+                    </div>
+                    <a class="card-description" href="/today/">
+                        <h3>Today</h3>
+                        <p>Random ways of showing what day today is</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/web-dev/flexchart.png" alt="image of webpage 'flexchart'">
+                    </div>
+                    <a class="card-description" href="https://flexchart-web.web.app" target="_blank">
+                        <h3>FlexChart</h3>
+                        <p>A website made in a programming competition, it is a tool to visualize and graph data</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/web-dev/polytask.png" alt="image of webpage 'polytask'">
+                    </div>
+                    <a class="card-description" href="https://polytaskdev.github.io/Polytask/" target="_blank">
+                        <h3>PolyTask</h3>
+                        <p>Another programming competition website, it's a dashboard with many useful widgets </p>
+                    </a>
+                </div>
+            </div>     
         </div>
-        <div class="section-content">
-            <div class="section-expanded">
-                <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/web-dev/cartographer.png" alt="image of the website, cartographer">
-                        </div>
-                        <a class="card-description" href="https://cartographer-vocabulary.web.app" target="_blank">
-                            <h3>Cartographer</h3>
-                            <p>A vocabulary and flashcard website app that I made. </p>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/web-dev/today.png" alt="image of webpage 'today'">
-                        </div>
-                        <a class="card-description" href="/today/">
-                            <h3>Today</h3>
-                            <p>Random ways of showing what day today is</p>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/web-dev/flexchart.png" alt="image of webpage 'flexchart'">
-                        </div>
-                        <a class="card-description" href="https://flexchart-web.web.app" target="_blank">
-                            <h3>FlexChart</h3>
-                            <p>A website made in a programming competition, it is a tool to visualize and graph data</p>
-                        </a>
-                    </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/web-dev/polytask.png" alt="image of webpage 'polytask'">
-                        </div>
-                        <a class="card-description" href="https://polytaskdev.github.io/Polytask/" target="_blank">
-                            <h3>PolyTask</h3>
-                            <p>Another programming competition website, it's a dashboard with many useful widgets </p>
-                        </a>
-                    </div>
-                </div>     
-            </div>
-       </div>
     </section>
     <section id="section-swift">
-        <div class="section-label">
-            <h1>Swift</h1>
-            <p>I make cool apps for the Mac and iPhones.</p>
-        </div>
-        <div class="section-content">
-            <div class="section-expanded">
-                <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/swift/cartographer-ios.png" alt="image of a macOS and iOS vocabulary app">
-                        </div>
-                        <a class="card-description" href="https://github.com/cartographer-vocabulary/cartographer-swift" target="_blank">
-                            <h3>Cartographer</h3>
-                            <p>The native macOS and iOS version of the Cartographer vocabulary website</p>
-                        </a>
+        <h1>Swift</h1>
+        <p>I make cool apps for the Mac and iPhones.</p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/swift/cartographer-ios.png" alt="image of a macOS and iOS vocabulary app">
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/swift/cycles.png" alt="image of a macOS timer app called cycles">
-                        </div>
-                        <a class="card-description" href="/cycles/">
-                            <h3>Cycles</h3>
-                            <p>A timer made in swiftui for the Mac</p>
-                        </a>
+                    <a class="card-description" href="https://github.com/cartographer-vocabulary/cartographer-swift" target="_blank">
+                        <h3>Cartographer</h3>
+                        <p>The native macOS and iOS version of the Cartographer vocabulary website</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/swift/cycles.png" alt="image of a macOS timer app called cycles">
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/swift/schedule.png" alt="image of a macOS planning and todo-list app">
-                        </div>
-                        <a class="card-description" href="/schedule/" >
-                            <h3>Schedule</h3>
-                            <p>A schedule and planning app made for Mac</p>
-                        </a>
+                    <a class="card-description" href="/cycles/">
+                        <h3>Cycles</h3>
+                        <p>A timer made in swiftui for the Mac</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/swift/schedule.png" alt="image of a macOS planning and todo-list app">
                     </div>
+                    <a class="card-description" href="/schedule/" >
+                        <h3>Schedule</h3>
+                        <p>A schedule and planning app made for Mac</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     <section id="section-blender">
-        <div class="section-label">
-            <h1>Blender</h1>
-            <p>Blender is a free and open source 3D graphics software. website: <a href="https://blender.org" target="_blank">blender.org</a></p>
-        </div>
-        <div class="section-content">
-            <div class="section-expanded">
-                <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/blender/low-poly-donut.png" alt="blender donut low poly">
-                        </div>
-                        <div class="card-description">
-                            <h3>low poly donut</h3>
-                            <p>just a donut, but low poly</p>
-                        </div>
+        <h1>Blender</h1>
+        <p>Blender is a free and open source 3D graphics software. website: <a href="https://blender.org" target="_blank">blender.org</a></p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/blender/low-poly-donut.png" alt="blender donut low poly">
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/blender/apple-watch.png" alt="blender apple watch">
-                        </div>
-                        <div class="card-description">
-                            <h3>Apple Watch</h3>
-                            <p>A concept render of an Apple Watch</p>
-                        </div>
+                    <div class="card-description">
+                        <h3>low poly donut</h3>
+                        <p>just a donut, but low poly</p>
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/blender/trainstation.png" alt="blender trainstation">
-                        </div>
-                        <div class="card-description">
-                            <h3>Train Station</h3>
-                            <p>A miniature train station.</p>
-                        </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/blender/apple-watch.png" alt="blender apple watch">
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/blender/donut.png" alt="blender donut">
-                        </div>
-                        <div class="card-description">
-                            <h3>Metal Donut</h3>
-                            <p>A donut that's a nut</p>
-                        </div>
+                    <div class="card-description">
+                        <h3>Apple Watch</h3>
+                        <p>A concept render of an Apple Watch</p>
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/blender/ocean.png" alt="blender beach">
-                        </div>
-                        <div class="card-description">
-                            <h3>Beach</h3>
-                            <p>A abstract beach and ocean made with blender shader nodes. I'm using this as my profile picture</p>
-                        </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/blender/trainstation.png" alt="blender trainstation">
+                    </div>
+                    <div class="card-description">
+                        <h3>Train Station</h3>
+                        <p>A miniature train station.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/blender/donut.png" alt="blender donut">
+                    </div>
+                    <div class="card-description">
+                        <h3>Metal Donut</h3>
+                        <p>A donut that's a nut</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/blender/ocean.png" alt="blender beach">
+                    </div>
+                    <div class="card-description">
+                        <h3>Beach</h3>
+                        <p>A abstract beach and ocean made with blender shader nodes. I'm using this as my profile picture</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <section id="section-simlations">
-        <div class="section-label">
-            <h1>Simulations & Visualizations</h1>
-            <p>Sometimes I like to make simulations of things. most of them are made in <a href="https://p5js.org" target="_blank">p5.js</a></p>
-        </div>
-        <div class="section-contnt">
-            <div class="section-expanded">
-                <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/simulations/circles.png" alt="image of a physics simulation of circles">
-                        </div>
-                        <a class="card-description" href="/simulations/circle-physics/">
-                            <h3>Circle Physics</h3>
-                            <p>A physics simulation of circles colliding and bouncing around</p>
-                        </a>
+        <h1>Simulations & Visualizations</h1>
+        <p>Sometimes I like to make simulations of things. most of them are made in <a href="https://p5js.org" target="_blank">p5.js</a></p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/simulations/circles.png" alt="image of a physics simulation of circles">
                     </div>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/simulations/wave.png" alt="image of a wave">
-                        </div>
-                        <a class="card-description" href="/simulations/wave/">
-                            <h3>Wave</h3>
-                            <p>An interactive line</p>
-                        </a>
+                    <a class="card-description" href="/simulations/circle-physics/">
+                        <h3>Circle Physics</h3>
+                        <p>A physics simulation of circles colliding and bouncing around</p>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/simulations/wave.png" alt="image of a wave">
                     </div>
+                    <a class="card-description" href="/simulations/wave/">
+                        <h3>Wave</h3>
+                        <p>An interactive line</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
     <section id="section-design">
-        <div class="section-label">
-            <h1>Graphics Design</h1>
-            <p>I also design websites and other stuff, and just try to make things look good in general.</p>
-        </div> 
-        <div class="section-content">
-            <div class="section-expanded">
-                <div class="card-container">
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
-                    <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
-                    <div class="card">
-                        <div class="card-content">
-                            <img src="images/design/big-sur-icons.png" alt="image of a macos app icons">
-                        </div>
-                        <a class="card-description" href="/big-sur-icons/">
-                            <h3>macOS Big Sur Replacement Icons</h3>
-                            <p>App icon replacements that I created.</p>
-                        </a>
+        <h1>Graphics Design</h1>
+        <p>I also design websites and other stuff, and just try to make things look good in general.</p>
+        <div class="section-expanded">
+            <div class="card-container">
+                <button class="card-scroll-button" onmousedown="scrollButton(this,true)" ontouchstart="scrollButton(this,true)">❮</button>
+                <button class="card-scroll-button" onmousedown="scrollButton(this,false)" ontouchstart="scrollButton(this,false)">❯</button>
+                <div class="card">
+                    <div class="card-content">
+                        <img src="images/design/big-sur-icons.png" alt="image of a macos app icons">
                     </div>
+                    <a class="card-description" href="/big-sur-icons/">
+                        <h3>macOS Big Sur Replacement Icons</h3>
+                        <p>App icon replacements that I created.</p>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+    <footer>
+        <h1>Links</h1>
+        <ul>
+            <li><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a></li>
+            <li><a href="mailto:hello@tonyzhang.net">Email</a></li>
+            <li><a href="https://github.com/Tony1324" target="_blank">GitHub</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </footer>
     <script charset="utf-8">
         appearOnScroll()
     </script>

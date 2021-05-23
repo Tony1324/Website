@@ -44,7 +44,6 @@ function addVideos(data){
 } 
 
 function uploads(nextPageToken){
-    console.log(savedVideos)
     if(savedVideos && (Date.now() - previousSavedTime) < 3600000){
         addVideos(savedVideos)
         console.log("loading saved", Date.now() - previousSavedTime)

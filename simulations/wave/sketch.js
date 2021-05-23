@@ -8,7 +8,9 @@ var p2 = 0;
 var s1 = 1;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    var canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent('sketch');
+
     for (let i = 0; i < width; i += s) {
         p[i] = 0;
         pp[i] = 0;

@@ -6,7 +6,8 @@ var box = [];
 var bsize = size;
 var bounce = 1;
 function setup() {
-    createCanvas(windowWidth,windowHeight);
+    var canvas = createCanvas(windowWidth,windowHeight);
+    canvas.parent("sketch")
     for (let i = 0; i < n; i++) {
         balls[i] = new ball();
     }

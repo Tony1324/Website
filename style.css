@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root{
-    --accent-color:#FF6363;
+    --accent-color:#FF5855;
     --background-color:white;
-    --foreground-color-1:#464656;
-    --foreground-color-2:#666676;
+    --background-secondary-color:rgb(245,245,245);
+    --foreground-color-1:#464650;
+    --foreground-color-2:#666670;
     --background-transparent:rgba(0,0,0,0.6);
     --section-transition-duration: 0.2s;
     --card-transition-duration: 0.2s;
@@ -19,6 +20,7 @@
 @media (prefers-color-scheme: dark) {
     :root{
         --background-color:#36363A;
+        --background-secondary-color:#404044;
         --foreground-color-1:whitesmoke;
         --foreground-color-2:#DDDDDD;
     }
@@ -33,6 +35,18 @@ body,html{
     font-family: "roboto", sans-serif;
     color: var(--foreground-color-1);
     background-color:var(--background-color);
+}
+
+html{
+    overflow:scroll;
+    height:100%;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    width:100%;
 }
 
 /* ███████╗██╗     ███████╗███╗   ███╗███████╗███╗   ██╗████████╗███████╗ */
@@ -54,9 +68,8 @@ h1{
     word-break: normal;
 }
 
-p{
-    font-weight: 300;
-    font-size: calc(14px + (16 - 14) * (100vw - 400px) / (1200 - 400));
+p, li{
+    font-size: calc(14px + (15.5 - 14) * (100vw - 400px) / (1200 - 400));
     line-height:1.5em;
     margin:0;
     color:var(--foreground-color-2);
@@ -65,10 +78,15 @@ p{
     word-break: normal;
 }
 
+p ~ p {
+    margin:1em 0;
+}
+
 a {
     color:inherit;
     display:inline-block;
-    text-decoration: none;
+    text-decoration-color: rgba(128,128,128,0.4);
+    -webkit-text-decoration-color: rgba(128,128,128,0.4); /* Safari */  
     transition: background-color 0.1s;
     padding:2px 4px;
     margin:-2px -4px;
@@ -86,16 +104,27 @@ a:active{
 }
 
 h1 a{
+    text-decoration: none;
     padding:8px 8px;
     margin:-8px -8px;
     word-wrap: break-word;
     word-break: normal;
 }
 
+header a {
+    text-decoration: none;
+}
+
 img {
     width:100%;
     border-radius: 5px;
     margin: 20px 0px
+}
+
+ul {
+    list-style: none;
+    padding:0;
+    margin:0;
 }
 
 /* ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗        ██╗       ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗ */
@@ -105,18 +134,22 @@ img {
 /* ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║    ██████║      ███████║███████╗╚██████╗   ██║   ██║╚██████╔╝██║ ╚████║███████║ */
 /* ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═════╝      ╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝ */
 
-header,section{
+header,section,footer{
     width:100%;
     padding:20px calc(50vw - 450px);
+    overflow:hidden;
+    flex-shrink:0;
 }
 
-section h1{
+section{flex-grow:1}
+
+section h1, footer h1{
     display: inline-block;
     font-size: calc(18px + (24 - 18) * (100vw - 400px) / (1200 - 400));
     font-weight:500;
 }
 
-section h1::after{
+section h1::after, footer h1::after{
     content:"";
     display:block;
     width:0;
@@ -126,7 +159,7 @@ section h1::after{
     transition:width 0.2s, height 0.2s;
 }
 
-section h1:hover::after{
+section h1:hover::after, footer h1:hover::after{
     content:"";
     display:block;
     width:100%;
@@ -135,7 +168,7 @@ section h1:hover::after{
 }
 
 @media only screen and (max-width: 940px){
-    header,section{
+    header,section,footer{
         padding:20px 20px;
     }
     .section-expanded{
@@ -143,17 +176,11 @@ section h1:hover::after{
     }
 }
 
-.section-content{
-    margin-top: 1em;
-    width:100%;
-    height:100%;
-}
-
 .section-expanded{
     margin: 0px calc((-50vw + 450px) / 1);
 }
 
-section > *, header > *{
+section > *, header > *, footer > *{
     opacity:0;
     transform: translateY(50px);
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -178,42 +205,36 @@ header p{
     color: white;
 }
 
-header .section-content{
-    width:auto !important;
-    height:auto !important;
-}
-
 [header-small] header{
     position:fixed;
     z-index: 10;
-    min-height:30px;
-    height:30px;
-}
-
-
-[header-small] header .section-label {
+    min-height:40px;
+    height:40px;
     display:flex;
-    align-items: baseline;
+    padding-top:0;
+    padding-bottom:0;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
 }
 
 
-[header-small] header .section-content {
+[header-small] header > *:not(h1):not(.main-description){
     display:none;
 }
 
-[header-small] header .section-label h1{
-    display:inline-block;
+[header-small] header h1{
+    display:inline-block !important;
     font-size:1em;
     font-weight: 500;
 }
 
-[header-small] header .section-label h1 a{
+[header-small] header h1 a{
     padding:4px 6px;
     margin:-4px -6px;
 }
 
-[header-small] header .section-label p{
+[header-small] header .main-description{
     display:inline-block;
     font-size:1em;
 }
@@ -224,6 +245,12 @@ header .section-content{
 
 [header-medium] header {
     height:40vh;
+}
+
+footer {
+    background:var(--background-secondary-color);
+    padding-bottom:30px;
+    flex-grow:0;
 }
 
 /*  ██████╗ █████╗ ██████╗ ██████╗ ███████╗ */
@@ -357,6 +384,7 @@ header .section-content{
     transition-timing-function: ease;
     transition-duration: var(--card-transition-duration);
     pointer-events: none;
+    text-decoration: none;
     overflow:auto;
 }
 
