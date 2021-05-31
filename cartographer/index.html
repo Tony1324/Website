@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="icon" href="/icon.png"/>
+    <script charset="utf-8" src="/main.js"></script>
+    <title>Cartographer | Tony Zhang</title>
+    <noscript>
+        <style type="text/css" media="screen">
+            section > *, header > *{
+                opacity:1;
+                transform: translateY(0px);
+                transition: transform 0s, opacity 0s;
+            }
+        </style>
+    </noscript>
+</head>
+<body header-medium>
+    <header onload="appearOnScroll()">
+        <h1><a href="/">Cartographer</a></h1>
+        <p>Cartgrapher is a cool website and app for learning vocabulary</p>
+    </header>
+
+    <section>
+        <h1>Story</h1>
+        <p>I am learning programming, and I particularly enjoy making websites, and making them look good.
+        However, all of my previous websites were just front-end, meaning they couldn't really store data,
+        and there are no features like signing in etc. 
+        <br>
+        <br>
+        I wanted to learn more about the backend, and also wanted to create something useful. The obvious
+        project that I could do was make a to-do list app, where there are multiple lists, and to-do items
+        in those lists. but I found that it was to "default" and boring, and I have a system of managing 
+        to-do's already, so of course, I decided to make something that will be truely useful yet not too
+        hard, so I made cartographer.
+        <br>
+        <br>
+        What I used to store the data and all the other stuff is something called <a href="http://firebase.google.com " target="_blank">Firebase</a>.
+        It's really a fantastic tool for making something like this quickly, I know that this perhaps isn't
+        the best way of learning about storing data and everything, but without it, this website would have 
+        been nowhere as good, and probably have tons of security issues.
+        </p>
+    </section>
+    <section>
+        <h1>Website</h1>
+        <img src="../images/web-dev/cartographer.png" alt="a screenshot of the website: cartographer"/>
+        <p>The website is the first thing that I made, You can go there at  <a href="https://cartographer-vocabulary.web.app" target="_blank">https://cartographer-vocabulary.web.app</a></p>
+        <h2>Lists</h2>
+        <p>You can add lists by clicking the "+" button next to my lists, then you enter a name and click ok.
+        Here you can add new words by typing in the two text fields on the bottom, and the pressing the enter key.
+        </p>
+        <img src="images/card-input.png" alt="the text fields used for created cards"/> 
+        <p>you can now see a card as popped up on the bottom, and a flashcard on the top.</p>
+        <img src="images/card-view.png" alt="the card view"/>
+        <p>One of the great features about this website is the fact that the cards are in a grid, allowing
+        you to see much more of them at a glance.</p>
+        <img src="images/card-grid.png" alt="the card grid view"/>
+        <p>you can also drag to reorder these cards.</p>
+        <img src="images/card-drag.png" alt="a card being dragged"/>
+        <p>Now let's go to the quiz mode, it's quite simple, with 4 randomly generated options, you can 
+        click on the options with your mouse, or use the number keys 1-4. Here you can practice for as 
+        long as you want.</p>
+        <img src="images/quiz-mode.png" alt="the card quiz view"/>
+        <p>Here is the settings for lists. At the top, you can edit the name, or delete the list.
+        In the drop down labeled folder, you can select which folder to put your lists in, we'll talk about this more 
+        In a bit. Then there are the sharing preferences. The checkbox for public decides whether everyone with the link 
+        can view. You can then add viewers or editors to this list by entering their email. At the bottom 
+        you can also import your lists from quizlet.
+        </p>
+        <img src="images/list-settings.png" alt="the card settings view"/>
+        <h2>Folders</h2>
+        <p>You can add them the same way as the lists, by clicking on the "+" button on the side bar.
+        All folders start out being empty, of course, but you can add a list by clicking the add list button
+        in the folder view, or moving a list to that folder from the list settings. 
+        </p>
+        <img src="images/folder.png" alt="the folder view"/>
+        <p>The folder settings are almost the same as the lists, sans move to folder, and import from quizlet.</p>
+        <img src="images/folder-settings.png" alt="the folder settings view"/>
+        <h2>Favorites</h2>
+        <p>You can star lists and folders by clicking the star on the top, and you can see all of the lists & folders
+        in the favorites tab on the sidebar.</p>
+        <img src="images/favorites-star.png" alt="the star button"/>
+        <img src="images/favorites-view.png" alt="the favorites view"/>
+        <h2>Profile</h2>
+        <p>Finally, the user profile, It's extremely simple, because I don't collect any data, send any emails, or anything
+        so all of those settings don't exist. You can change your name, sign out, and use the different color schemes and themes.</p>
+        <img src="images/profile-settings.png" alt="user profile settings"/>
+        <img src="images/color-scheme.png" alt="another color scheme"/>
+    </section>
+    <footer>
+        <h1>Links</h1>
+        <ul>
+            <li><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a></li>
+            <li><a href="mailto:hello@tonyzhang.net">Email</a></li>
+            <li><a href="https://github.com/Tony1324" target="_blank">GitHub</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

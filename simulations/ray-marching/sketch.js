@@ -1,6 +1,7 @@
 function setup(){
     var canvas = createCanvas(windowWidth, windowHeight);
     canvas.parent("sketch")
+    background(255)
 }
 
 var posX = -180
@@ -8,11 +9,13 @@ var posY = -100
 var dirX = 1
 var dirY = 1
 
-var shapeStroke = 10
+var traceMode = false
+
+var shapeStroke = traceMode ? 0 : 10
 
 var mouseDrag = false;
 function draw(){
-    background(255);
+    if(!traceMode){background(255)}
     strokeWeight(shapeStroke)
     translate(width/2,height/2)
     fill(0,0,0,0)
@@ -38,7 +41,7 @@ function draw(){
     let mouseVector = createVector(mouseX,mouseY)
     mouseVector.x -= width/2 + posX
     mouseVector.y -= height/2 + posY
-    if (mouseIsPressed) {
+    if (mouseIsPressed || traceMode) {
             mouseDrag = true
             posX=mouseX - width/2
             posY=mouseY - height/2
@@ -51,28 +54,42 @@ function draw(){
     }
 
     let dir = createVector(dirX,dirY).normalize()
-    let current = createVector(posX,posY);
-    strokeWeight(10)
-    point(current.x, current.y)
-    for(let i=0; i<500; i++){
-        let step = dir.copy()
+    if(traceMode){
+        dir = p5.Vector.random2D()
+    }
 
-        let minDist = 500
-        shapes.forEach((shape)=>{
-            let dist = shape.dist(current.x, current.y)
-            if(dist < minDist){
-                minDist = dist
-            }
-        })
-        
+    let current = createVector(posX,posY);
+    if(!traceMode){
         strokeWeight(10)
         point(current.x, current.y)
-        strokeWeight(2)
-        ellipse(current.x,current.y, minDist * 2, minDist * 2)
-        step.mult(minDist)
-        strokeWeight(2)
-        line(current.x,current.y, current.x + step.x, current.y + step.y)
-        current.add(step)
+    }
+    for(let i=0; i<30; i++){
+        if(traceMode){
+            dir = p5.Vector.random2D()
+            current = createVector(posX,posY);
+        }
+        for(let j=0; j<500; j++){
+            let step = dir.copy()
+
+            let minDist = 500
+            shapes.forEach((shape)=>{
+                let dist = shape.dist(current.x, current.y)
+                if(dist < minDist){
+                    minDist = dist
+                }
+            })
+
+            strokeWeight(traceMode ? 2 : 10)
+            if(!traceMode || minDist <= 0){
+                point(current.x, current.y)
+            }
+            strokeWeight(traceMode ? 0 : 2)
+            ellipse(current.x,current.y, minDist * 2, minDist * 2)
+            step.mult(minDist)
+            line(current.x,current.y, current.x + step.x, current.y + step.y)
+            current.add(step)
+        }
+        if(!traceMode){break;}
     }
 
 }
