@@ -8,6 +8,15 @@ window.addEventListener("resize", ()=>{
 window.addEventListener("load", appearOnScroll)
 window.addEventListener("scroll", appearOnScroll)
 
+window.addEventListener("load", ()=>{
+    let sizeDec = 0;
+    while(document.querySelector("header").getBoundingClientRect().bottom - document.querySelector("header").getBoundingClientRect().top < document.querySelector("header h1").getBoundingClientRect().bottom - document.querySelector("header h1").getBoundingClientRect().top + 100 && !(document.body.attributes["header-small"])){
+        document.querySelector("header h1").style.fontSize = `calc(${45-sizeDec}px + (${80-sizeDec} - ${45-sizeDec}) * (100vw - 400px) / (1200 - 400))`
+        sizeDec++
+        if(sizeDec > 100){break;}
+    }
+})
+
 function appearOnScroll(){
     slowForEach([...document.querySelectorAll("header > *:not(.scroll-animation-appeared), section > *:not(.scroll-animation-appeared),footer > *:not(.scroll-animation-appeared)")], ((e,next)=>{
         if(window.innerHeight - e.getBoundingClientRect().top > 140 || window.innerHeight - e.getBoundingClientRect().bottom > -80){

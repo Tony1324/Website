@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="icon" href="/icon.png"/>
+    <script charset="utf-8" src="/main.js"></script>
+    <title>The Problem With Border Radius | Tony Zhang</title>
+    <noscript>
+        <style type="text/css" media="screen">
+            section > *, header > *{
+                opacity:1;
+                transform: translateY(0px);
+                transition: transform 0s, opacity 0s;
+            }
+        </style>
+    </noscript>
+</head>
+<body header-medium>
+    <header onload="appearOnScroll()">
+        <h1><a href="/">The Problem With Border Radius</a></h1>
+        <p>
+        May 31, 2021
+        </p>
+    </header> 
+    <section>
+        <h1>What exactly is border radius anyways?</h1>
+        <p>Border-radius, sometimes called corner-radius, is pretty simple, it just rounds 
+        the corners of a rectangle or some other shape. This can be done fairly easily
+        by placing 4 circles at the corners, like this:</p>
+        <img src="images/border-radius-construction.png" alt="how border radius is made">
+    </section>
+    <section>
+        <h1>The Problem</h1>
+        <p>The picture looks fairly straight-forward, and doesn't seem to be problematic, but lets 
+        zoom in of one of the corners. you can see at the parts were the square and circles connect,
+        it seems kind of sharp, or at least not completely smooth like it should be.</p>
+        <img src="images/corner-zoomed-in.png" alt="zoomed in close up of a corner">
+        <p>Okay, maybe it's not that noticable, but you can tell where the line changes from being straight
+        to being curved. 
+        <br>
+        <br>
+        Now this graph is really non-scientific, but does a good job of showing the curvature 
+        as you go from the sides of the square to the corner and to the straight sides again. 
+        </p>
+        <img src="images/curvature-graph.png" alt="curvature over a shape">
+        <p>It's this sudden jump from being completely straight to being curved that causing the weird-ness.</p>
+    </section>
+    <section>
+        <h1>The Solution</h1>
+        <p>Look at these two squares here, the first one is just our regular non-smooth rounded-rectangle,
+        but the second one seems smoother, somehow.</p>
+        <img src="images/smooth-vs-non-smooth.png" alt="comparasion between two rounded rectangles">
+        <p>Using the previous non-scientific curvature graph for the second shape would look something like this:</p>
+        <img src="images/curvature-graph-smooth.png" alt="curvature over a shape">
+        <p>To see how I made the second shape, lets look at how we can graph a circle. The equation for a circle would 
+        be x<sup>2</sup>+y<sup>2</sup>=r<sup>2</sup> with r being the radius. </p>
+        <img src="images/circle-graph.png" alt="graph of a circle">
+        <p>Now if we increase the exponent to something like 4, this is what shows.</p>
+        <img src="images/rounded-rectangle-graph.png" alt="graph of a squircle">
+        <p>Hurray! 🎉 Now we have some nice and smooth rectangles, also called squircles, also called superellipses.
+        <br>
+        <br>
+        Now you know this bit of knowledge, how do you actually
+        use it? Sadly, you can't really in most places. Stuff like css just doesn't support this type of border-radius
+        yet. I can show you how I made these pictures tho. In figma, you can click the expand button on the 
+        border radius, and then click the 3 dots, and increase the smoothness. </p>
+        <img src="images/border-radius-figma.png" alt="make smooth corners in figma.">
+    </section>
+    <section>
+        <p>Lets look at some good examples of the smooth corners in use, here is a comparasion of iOS and Android 12.</p>
+        <img src="images/ios-android.png" alt="ios vs android">
+        <p>Both of these look great in my opinion, but you can really see how the smooth iOS corners make the Android
+        buttons and controls look jagged in comparison.</p>
+    </section>
+    <footer>
+        <h1>Links</h1>
+        <ul>
+            <li><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a></li>
+            <li><a href="mailto:hello@tonyzhang.net">Email</a></li>
+            <li><a href="https://github.com/Tony1324" target="_blank">GitHub</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
