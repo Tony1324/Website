@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="icon" href="/icon.png"/>
+    <script charset="utf-8" src="/main.js"></script>
+    <script charset="utf-8" src="main.js"></script>
+    <title>Tone Generator | Tony Zhang</title>
+    <noscript>
+        <style type="text/css" media="screen">
+            section > *, header > *{
+                opacity:1;
+                transform: translateY(0px);
+                transition: transform 0s, opacity 0s;
+            }
+        </style>
+    </noscript>
+</head>
+<body>
+    <header onload="appearOnScroll()">
+        <h1><a href="/">Tone Generator</a></h1>
+        <p class="main-description">Made with tone.js</p>
+        <p>The sliders below represent overtones</p>
+    </header>
+    <section>
+        <div id="keyboard">
+            <div class="key" onmousedown="playSound(this,261.63)"></div>
+            <div class="key black" onmousedown="playSound(this,277.18)"></div>
+            <div class="key" onmousedown="playSound(this,293.66)"></div>
+            <div class="key black" onmousedown="playSound(this,311.13)"></div>
+            <div class="key" onmousedown="playSound(this,329.63)"></div>
+            <div class="key" onmousedown="playSound(this,349.23)"></div>
+            <div class="key black" onmousedown="playSound(this,369.99)"></div>
+            <div class="key" onmousedown="playSound(this,392)"></div>
+            <div class="key black" onmousedown="playSound(this,415.3)"></div>
+            <div class="key" onmousedown="playSound(this,440)"></div>
+            <div class="key black" onmousedown="playSound(this,466.16)"></div>
+            <div class="key" onmousedown="playSound(this,493.88)"></div>
+            <div class="key" onmousedown="playSound(this,523.25)"></div>
+        </div> 
+    </section>
+    <footer>
+        <h1>Links</h1>
+        <ul>
+            <li><a href="https://twitter.com/Tony24752364" target="_blank">Twitter</a></li>
+            <li><a href="mailto:hello@tonyzhang.net">Email</a></li>
+            <li><a href="https://github.com/Tony1324" target="_blank">GitHub</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+    </footer>
+
+</body>
+</html>

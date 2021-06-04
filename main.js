@@ -15,6 +15,7 @@ window.addEventListener("load", ()=>{
         sizeDec++
         if(sizeDec > 100){break;}
     }
+    appearOnScroll()
 })
 
 function appearOnScroll(){

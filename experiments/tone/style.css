@@ -1,0 +1,39 @@
+#keyboard{
+    width:100%;
+    min-height: 300px;
+    display:flex;
+}
+
+.key{
+    flex-grow: 1;
+    margin: 5px;
+    background-color:white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+.key:hover{
+    background-color: rgb(225,225,225);
+}
+
+.key:active{
+    background-color: var(--accent-color);
+}
+
+.black{
+    background-color: rgb(34,34,38);
+    margin: -5px -5%;
+    width:10%;
+    flex-grow:0;
+    z-index: 1;
+    height:200px;
+}
+
+.black:hover{
+    background-color: rgb(80,80,86);
+}
+
+.black:active{
+    background-color: var(--accent-color);
+}
