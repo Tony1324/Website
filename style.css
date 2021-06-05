@@ -61,7 +61,7 @@ body{
 h1{
     font-family:"IBM Plex Sans", sans-serif;
     font-weight: 800;
-    font-size: calc(45px + (80 - 45) * (100vw - 400px) / (1200 - 400));
+    font-size: 30px;
     line-height: 1.2em;
     letter-spacing: 0.05em;
     margin:10px 0px;
@@ -72,7 +72,7 @@ h1{
 h2{
     font-family:"IBM Plex Sans", sans-serif;
     font-weight: 500;
-    font-size: calc(16px + (22 - 16) * (100vw - 400px) / (1200 - 400));
+    font-size: 25px;
     line-height: 1.2em;
     letter-spacing: 0.05em;
     margin:1em 0px 0.5em 0px;
@@ -81,7 +81,7 @@ h2{
 }
 
 p, li{
-    font-size: calc(14px + (15.5 - 14) * (100vw - 400px) / (1200 - 400));
+    font-size: 17px;
     line-height:1.5em;
     margin:0;
     color:var(--foreground-color-2);
@@ -155,7 +155,6 @@ section{
 
 section h1, footer h1{
     display: inline-block;
-    font-size: calc(18px + (24 - 18) * (100vw - 400px) / (1200 - 400));
     font-weight:500;
 }
 
@@ -210,9 +209,12 @@ header{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    height: 60vh;
-    min-height:400px;
+    min-height: max(400px, 60vh);
     color: white;
+}
+
+header h1{
+    font-size: calc(45px + (80 - 45) * (100vw - 400px) / (1200 - 400));
 }
 
 header p{
