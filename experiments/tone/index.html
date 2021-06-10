@@ -20,10 +20,11 @@
     </noscript>
 </head>
 <body>
-    <header onload="appearOnScroll()">
+    <header>
         <h1><a href="/">Tone Generator</a></h1>
         <p class="main-description">Made with tone.js</p>
         <p>The sliders below represent overtones</p>
+        <script>loadSliders()</script>
     </header>
     <section>
         <div id="keyboard">
@@ -51,6 +52,8 @@
             <li><a href="/blog">Blog</a></li>
         </ul>
     </footer>
-
+    <script charset="utf-8">
+        appearonscroll()
+    </script>
 </body>
 </html>

@@ -11,7 +11,6 @@ window.addEventListener("resize", ()=>{
     }
 })
 
-window.addEventListener("load", appearOnScroll)
 window.addEventListener("scroll", appearOnScroll)
 
 window.addEventListener("load", ()=>{

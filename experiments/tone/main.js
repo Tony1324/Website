@@ -1,11 +1,12 @@
 var count = 15
 var overtones = Array(count).fill(10)
 
-window.addEventListener("load", ()=>{
+function loadSliders(){
+    console.log(123)
     for(let i = 0; i < count; i++){
         document.querySelector("header").innerHTML += `<input type="range" id="${i}" value="${overtones[i]}" min="0" max="100" onchange="console.log(this.value);overtones[${i}]=this.value">`
     }
-})
+}
 
 function playSound(e,frequency){
     var context = new AudioContext()
