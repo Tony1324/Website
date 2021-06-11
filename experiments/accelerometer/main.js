@@ -47,13 +47,13 @@ window.addEventListener("resize", function(){
 
 
 
-// if (window.DeviceOrientationEvent) {
-//     window.addEventListener('deviceorientation', (events)=>{
-//         console.log(events.alpha)
-//     }, false);
-// }else{
-//     alert("not supported, use try using a phone")
-// }
+if (window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', (events)=>{
+        console.log(events.alpha)
+    }, false);
+}else{
+    alert("not supported, use try using a phone")
+}
 
 function orientationRequest(){
     DeviceOrientationEvent.requestPermission()
