@@ -47,22 +47,24 @@ window.addEventListener("resize", function(){
 
 
 
-// if (window.DeviceOrientationEvent) {
-//     window.addEventListener('deviceorientation', (events)=>{
-//         console.log(events.alpha)
-//     }, false);
-// }else{
-//     alert("not supported, use try using a phone")
-// }
+if (window.DeviceOrientationEvent) {
+    window.addEventListener('deviceorientation', (e) => {
+        let radians = e.alpha * (Math.PI / 180);
+        engine.world.gravity.y = Math.cos(radians)
+        engine.world.gravity.x = -Math.sin(radians)
+    })
+}else{
+    alert("not supported, use try using a phone")
+}
 
 function orientationRequest(){
     DeviceOrientationEvent.requestPermission()
         .then(response => {
             if (response == 'granted') {
                 window.addEventListener('deviceorientation', (e) => {
-                    let radians = e * (Math.PI / 180)
-                    engine.gravity.x = Math.cos(radians)
-                    engine.gravity.y = Math.sin(radians)
+                    let radians = e.alpha * (Math.PI / 180);
+                    engine.world.gravity.y = Math.cos(radians)
+                    engine.world.gravity.x = -Math.sin(radians)
                 })
             }
         })
