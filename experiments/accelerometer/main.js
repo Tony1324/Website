@@ -47,8 +47,10 @@ window.addEventListener("resize", function(){
 
 
 
+window.addEventListener("load", ()=>{
 if (window.DeviceOrientationEvent) {
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        if(confirm("allow device orientation?")){
         DeviceOrientationEvent.requestPermission()
             .then(response => {
                 if (response == 'granted') {
@@ -58,6 +60,7 @@ if (window.DeviceOrientationEvent) {
                 }
             })
             .catch(console.error)
+        }
     } else {
         window.addEventListener('deviceorientation', (events)=>{
             console.log(events.alpha)
@@ -66,6 +69,7 @@ if (window.DeviceOrientationEvent) {
 }else{
     alert("not supported, use try using a phone")
 }
+})
 
 // add all of the bodies to the world
 World.add(engine.world, [ground,ceiling,leftWall,rightWall]);
