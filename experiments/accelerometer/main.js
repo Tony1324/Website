@@ -51,7 +51,7 @@ if (window.DeviceOrientationEvent) {
     window.addEventListener('deviceorientation', (e) => {
         let beta = e.beta * (Math.PI / 180);
         let gamma = e.gamma * (Math.PI / 180);
-        engine.world.gravity.y = -Math.sin(beta)
+        engine.world.gravity.y = Math.sin(beta)
         engine.world.gravity.x = Math.sin(gamma)
     })
 }else{
@@ -65,7 +65,7 @@ function orientationRequest(){
                 window.addEventListener('deviceorientation', (e) => {
                     let beta = e.beta * (Math.PI / 180);
                     let gamma = e.gamma * (Math.PI / 180);
-                    engine.world.gravity.y = -Math.sin(beta)
+                    engine.world.gravity.y = Math.sin(beta)
                     engine.world.gravity.x = Math.sin(gamma)
                 })
             }
