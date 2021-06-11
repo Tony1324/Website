@@ -47,7 +47,7 @@ window.addEventListener("resize", function(){
 
 
 
-window.addEventListener("load", ()=>{
+window.addEventListener("click", ()=>{
 if (window.DeviceOrientationEvent) {
     if (typeof DeviceMotionEvent.requestPermission === 'function') {
         if(confirm("allow device orientation?")){
