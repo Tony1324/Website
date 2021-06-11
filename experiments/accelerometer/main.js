@@ -30,8 +30,8 @@ leftWall.restitution = 1
 rightWall.restitution = 1
 
 for(let i = 0; i < 10; i++){
-    let cube = Bodies.rectangle(window.innerWidth/2 + Math.random(),window.innerHeight/2,50,50)
-    cube.restitution = 1
+    let cube = Bodies.rectangle(window.innerWidth/2 + Math.random(),window.innerHeight/2,50,50,{friction:0.2})
+    cube.restitution = 0.6
     World.add(engine.world, [cube])
 }
 
@@ -52,7 +52,7 @@ window.addEventListener("resize", function(){
 if (window.DeviceMotionEvent) {
     window.addEventListener('devicemotion', (e) => {
         engine.world.gravity.x = e.accelerationIncludingGravity.x
-        engine.world.gravity.y = e.accelerationIncludingGravity.y
+        engine.world.gravity.y = -e.accelerationIncludingGravity.y
     });
 }else{
     alert("motion not supported, try using a phone")
@@ -64,7 +64,7 @@ function orientationRequest(){
             if (response == 'granted') {
                 window.addEventListener('devicemotion', (e) => {
                     engine.world.gravity.x = e.accelerationIncludingGravity.x
-                    engine.world.gravity.y = e.accelerationIncludingGravity.y
+                    engine.world.gravity.y = -e.accelerationIncludingGravity.y
                 })
             }
         })
