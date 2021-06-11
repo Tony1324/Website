@@ -48,15 +48,24 @@ window.addEventListener("resize", function(){
 
 
 if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', (events)=>{
-        console.log(events.alpha)
-    }, false);
+    if (typeof DeviceMotionEvent.requestPermission === 'function') {
+        DeviceOrientationEvent.requestPermission()
+            .then(response => {
+                if (response == 'granted') {
+                    window.addEventListener('deviceorientation', (e) => {
+                        // do something with e
+                    })
+                }
+            })
+            .catch(console.error)
+    } else {
+        window.addEventListener('deviceorientation', (events)=>{
+            console.log(events.alpha)
+        }, false);
+    }
 }else{
     alert("not supported, use try using a phone")
 }
-
-
-
 
 // add all of the bodies to the world
 World.add(engine.world, [ground,ceiling,leftWall,rightWall]);
