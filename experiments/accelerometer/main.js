@@ -47,20 +47,22 @@ window.addEventListener("resize", function(){
 
 
 
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', (events)=>{
-        console.log(events.alpha)
-    }, false);
-}else{
-    alert("not supported, use try using a phone")
-}
+// if (window.DeviceOrientationEvent) {
+//     window.addEventListener('deviceorientation', (events)=>{
+//         console.log(events.alpha)
+//     }, false);
+// }else{
+//     alert("not supported, use try using a phone")
+// }
 
 function orientationRequest(){
     DeviceOrientationEvent.requestPermission()
         .then(response => {
             if (response == 'granted') {
                 window.addEventListener('deviceorientation', (e) => {
-                    console.dir(e)
+                    let radians = e * (Math.PI / 180)
+                    engine.gravity.x = Math.cos(radians)
+                    engine.gravity.y = Math.sin(radians)
                 })
             }
         })
