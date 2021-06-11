@@ -62,9 +62,10 @@ function orientationRequest(){
         .then(response => {
             if (response == 'granted') {
                 window.addEventListener('deviceorientation', (e) => {
-                    let radians = e.alpha * (Math.PI / 180);
-                    engine.world.gravity.y = Math.cos(radians)
-                    engine.world.gravity.x = -Math.sin(radians)
+                    let beta = e.beta * (Math.PI / 180);
+                    let gamma = e.gamma * (Math.PI / 180);
+                    engine.world.gravity.y = -Math.sin(beta)
+                    engine.world.gravity.x = Math.sin(gamma)
                 })
             }
         })
