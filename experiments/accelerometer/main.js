@@ -20,7 +20,7 @@ render.canvas.width = document.documentElement.clientWidth;
 render.canvas.height = document.documentElement.clientHeight;
 
 var ground = Bodies.rectangle(window.innerWidth/2, window.innerHeight+100, 10000, 200, { isStatic: true , friction: 0});
-var ceiling = Bodies.rectangle(window.innerWidth/2, -100, 10000, 200, { isStatic: true , friction: 0});
+var ceiling = Bodies.rectangle(window.innerWidth/2, -60, 10000, 200, { isStatic: true , friction: 0});
 var leftWall = Bodies.rectangle(-100, window.innerHeight/2, 200, 10000, { isStatic: true , friction: 0});
 var rightWall = Bodies.rectangle(window.innerWidth+100, window.innerHeight/2, 200, 10000, { isStatic: true , friction: 0});
 
@@ -40,7 +40,7 @@ window.addEventListener("resize", function(){
     render.canvas.height = window.innerHeight;
     ground.width = window.innerWidth
     Matter.Body.setPosition(ground,{x:window.innerWidth/2,y:window.innerHeight+100})
-    Matter.Body.setPosition(ceiling,{x:window.innerWidth/2,y:-100})
+    Matter.Body.setPosition(ceiling,{x:window.innerWidth/2,y:-60})
     Matter.Body.setPosition(leftWall,{x:-100,y:window.innerHeight/2})
     Matter.Body.setPosition(rightWall,{x:window.innerWidth+100,y:window.innerHeight/2})
 });
