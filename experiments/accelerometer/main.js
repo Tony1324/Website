@@ -47,26 +47,24 @@ window.addEventListener("resize", function(){
 
 
 
-if (window.DeviceOrientationEvent) {
-    window.addEventListener('deviceorientation', (e) => {
-        let beta = e.beta * (Math.PI / 180);
-        let gamma = e.gamma * (Math.PI / 180);
-        engine.world.gravity.y = Math.sin(beta)
-        engine.world.gravity.x = Math.sin(gamma)
-    })
+
+
+if (window.DeviceMotionEvent) {
+    window.addEventListener('devicemotion', (e) => {
+        engine.world.gravity.x = e.accelerationIncludingGravity.x
+        engine.world.gravity.y = e.accelerationIncludingGravity.y
+    });
 }else{
-    alert("not supported, use try using a phone")
+    alert("motion not supported, try using a phone")
 }
 
 function orientationRequest(){
-    DeviceOrientationEvent.requestPermission()
+    DeviceMotionEvent.requestPermission()
         .then(response => {
             if (response == 'granted') {
-                window.addEventListener('deviceorientation', (e) => {
-                    let beta = e.beta * (Math.PI / 180);
-                    let gamma = e.gamma * (Math.PI / 180);
-                    engine.world.gravity.y = Math.sin(beta)
-                    engine.world.gravity.x = Math.sin(gamma)
+                window.addEventListener('devicemotion', (e) => {
+                    engine.world.gravity.x = e.accelerationIncludingGravity.x
+                    engine.world.gravity.y = e.accelerationIncludingGravity.y
                 })
             }
         })
