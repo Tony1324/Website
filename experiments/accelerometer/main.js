@@ -47,10 +47,15 @@ window.addEventListener("resize", function(){
 
 
 
-window.addEventListener("click", ()=>{
 if (window.DeviceOrientationEvent) {
-    if (typeof DeviceMotionEvent.requestPermission === 'function') {
-        if(confirm("allow device orientation?")){
+    window.addEventListener('deviceorientation', (events)=>{
+        console.log(events.alpha)
+    }, false);
+}else{
+    alert("not supported, use try using a phone")
+}
+
+function orientationRequest(){
         DeviceOrientationEvent.requestPermission()
             .then(response => {
                 if (response == 'granted') {
@@ -61,16 +66,7 @@ if (window.DeviceOrientationEvent) {
             })
             .catch(console.error)
         }
-    } else {
-        window.addEventListener('deviceorientation', (events)=>{
-            console.log(events.alpha)
-        }, false);
-    }
-}else{
-    alert("not supported, use try using a phone")
 }
-})
-
 // add all of the bodies to the world
 World.add(engine.world, [ground,ceiling,leftWall,rightWall]);
 
