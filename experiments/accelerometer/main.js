@@ -5,6 +5,8 @@ var Engine = Matter.Engine,
 
 // create an engine
 var engine = Engine.create();
+engine.world.gravity.x = 0
+engine.world.gravity.y = 0
 
 // create a renderer
 var render = Render.create({
@@ -30,9 +32,10 @@ leftWall.restitution = 1
 rightWall.restitution = 1
 
 for(let i = 0; i < 10; i++){
-    let cube = Bodies.rectangle(window.innerWidth/2 + Math.random(),window.innerHeight/2,50,50,{friction:0.2})
+    let cube = Bodies.rectangle(window.innerWidth/2 + Math.random(),window.innerHeight/2 + Math.random(),50,50,{friction:0.2})
     cube.restitution = 0.6
     World.add(engine.world, [cube])
+    Matter.Body.setVelocity(cube, {x:Math.random()*5-2.5,y:Math.random()*5-2.5,z:Math.random()*5-2.5})
 }
 
 window.addEventListener("resize", function(){
