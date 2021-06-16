@@ -256,7 +256,7 @@ header p{
 }
 
 [header-medium] header {
-    height:40vh;
+    min-height: max(400px, 40vh);
 }
 
 footer {
