@@ -1,8 +1,4 @@
 window.addEventListener("resize", ()=>{
-    document.querySelectorAll(".section-label *").forEach((e)=>{
-        e.style.overflow = "hidden" 
-        e.style.overflow = "visible" 
-    })
     let sizeDec = 0;
     while(document.querySelector("header").getBoundingClientRect().bottom - document.querySelector("header").getBoundingClientRect().top < document.querySelector("header h1").getBoundingClientRect().bottom - document.querySelector("header h1").getBoundingClientRect().top + 100 && !(document.body.attributes["header-small"])){
         document.querySelector("header h1").style.fontSize = `calc(${45-sizeDec}px + (${80-sizeDec} - ${45-sizeDec}) * (100vw - 400px) / (1200 - 400))`

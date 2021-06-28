@@ -12,7 +12,8 @@ function addVideos(data){
             title.innerHTML = video.snippet.title;
 
             let text = document.createElement("p");
-            text.innerHTML = video.snippet.description;
+            let date = new Date(Date.parse(video.snippet.publishTime))
+            text.innerHTML = date.toLocaleDateString() + "<br>" + video.snippet.description;
 
             let description = document.createElement("a");
             description.appendChild(title);
@@ -46,6 +47,7 @@ function addVideos(data){
 function uploads(nextPageToken){
     if(savedVideos && (Date.now() - previousSavedTime) < 3600000){
         addVideos(savedVideos)
+        console.log(savedVideos)
         console.log("loading saved", Date.now() - previousSavedTime)
     }else{
         fetch(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyAdgaQTvzBpamUf81RIJLDY3kI7Y7NHMX8&channelId=UCabBd1g8nBWWCx2YT4yeXOA&part=snippet,id&order=date&maxResults=50&pageToken${nextPageToken}`)
