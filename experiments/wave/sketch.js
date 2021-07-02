@@ -26,11 +26,11 @@ function draw() {
 
     for (let i = 0; i < width; i += s) {
         if (i != 0 && i < width - s) {
-            v[i] += (p[i] - pp[i - s]) / -10;
-            v[i] += (p[i] - pp[i + s]) / -10;
+            v[i] -= (p[i] - pp[i - s]);
+            v[i] -= (p[i] - pp[i + s]);
         }
 
-        p[i] += v[i] * 10 / s;
+        p[i] += v[i] / s;
 
         if (mouseIsPressed && i != 0 && i < width - s) {
             let amount =
